@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*div {height: 35px;*/
+        /*    width: 230px;*/
+        /*}*/
+        button{color: white;
+            background-color: #1ec335;
+        }
+    </style>
+</head>
+<body>
+<input id="txt" type="text">
+<button onclick="cre()">Add</button>
+<br><h3>Display All Product</h3>
+<div id="t">
+</div>
+<div id="from"></div>
+<img id="lo" src="../case-study/logo1.jpg" height="25" width="53"/>
+<script>
+    let list = ['Ip13', 'S10', 'X18', 'Ip12', 'M20']
+    display();
+
+    function cre() {
+        let pro = document.getElementById('txt').value;
+        list.push(pro);
+        display()
+    }
+
+    function display() {
+        // let s = '<div><div>Product Name</div><div></div><div>' + list.length + ' product </div></div>'
+      let s=''
+        for (let i = 0; i < list.length; i++) {
+            s += `<div>`;
+            s += `<div>${list[i]}</div>`;
+            s += `<div><button onclick="showEdit(${i})">Edit</button></div>`;
+            s += `<div><button onclick="Delete(${i})">Delete</button></div>`;
+            s += `</div>`;
+
+        }
+        document.getElementById('t').innerHTML = s;
+    }
+
+    function showEdit(index) {
+        let s = `<input id="ted" value="${list[index]}"><button onclick="save(${index})">Save</button>`
+        document.getElementById('from').innerHTML = s;
+    }
+
+    function save(index) {
+        let newL = document.getElementById('ted').value;
+        list[index] = newL;
+        display();
+        document.getElementById('from').innerHTML = ''
+    }
+
+    function Delete(index) {
+        for (let a = index; a < list.length; a++)
+            list[a] = list[a + 1];
+        list.pop()
+        display()
+    }
+</script>
+</body>
+</html>

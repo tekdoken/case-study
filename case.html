@@ -13,26 +13,102 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@600&display=swap" rel="stylesheet">
+    <link href="dangky.css" rel="stylesheet">
 
 </head>
 <body>
 <div id="nvl"><h1>NVL</h1></div>
 <div id="menu">
-    <button class="dk">Đăng ký</button>
-    <button>Đăng nhập</button>
+    <button class="dk" onclick="dk()">Đăng ký</button>
+    <button onclick="dn()">Đăng nhập</button>
+</div>
+<div  class="s" id="fdk">
+    <form action="" method="post">
+        <h2>Đăng ký tài khoản mới</h2>
+        <div class="input-box">
+            <h3>username</h3>
+            <input placeholder="Nhập username" type="text">
+        </div>
+        <div class="input-box">
+            <h3>password</h3>
+            <input placeholder="Nhập mật khẩu" type="password">
+        </div>
+        <div class="input-box">
+            <h3>re.password</h3>
+            <input placeholder="Xác nhận mật khẩu" type="password">
+        </div>
+        <div class="input-box">
+            <h3>số điện thoại</h3>
+            <input placeholder="Nhập số điện thọai" type="number">
+        </div>
+        <div class="input-box">
+            <h3>Email</h3>
+            <input placeholder="Nhập Email" type="password">
+        </div>
+        <div class="btn-box">
+            <button type="submit">
+                Đăng ký
+            </button>
+        </div>
+    </form>
+</div>
+<div  class="s" id="fdn">
+    <form action="" method="post">
+        <h2>Đăng nhập tài khoản</h2>
+        <div class="input-box">
+            <h3>username</h3>
+            <input placeholder="Nhập username" type="text">
+        </div>
+        <div class="input-box">
+            <h3>password</h3>
+            <input placeholder="Nhập mật khẩu" type="password">
+        </div>
+        <div class="btn-box">
+            <button type="submit">
+                Đăng nhập
+            </button>
+        </div>
+    </form>
 </div>
 <div id="menutop">
     <div id="logo"><img class="im" height="60" src="logo1.jpg" width="120"/></div>
     <hr>
-    <button onclick="menu()" class="btn"><i class="fa fa-bars"></i></button>
+    <button class="btn" onclick="menu()"><i class="fa fa-bars"></i></button>
+    <button>Tạo mới sản phẩm</button>
     <input class='in' placeholder='Tìm kiếm' type="text">
     <button class="ss"><span class="material-icons-outlined">
 search
 </span></button>
 </div>
-<div id="noimenu">
+<div id="main">
+    <div class="a" id="right">
+        <div>
+            <p class="dk">Sắp xếp: <select id="sapxep">
+                <option value="az">theo tên A-Z</option>
+                <option value="za">theo tên Z-A</option>
+            </select></p>
+        </div>
+       <h2>gdbdbdgbg</h2>
+        <div class="sp"></div>
+    </div>
+    <div class="s" id="left">
+        <ul class="the">
+            <h3>Thể loại:</h3>
+            <li>
+                <button></button>
+            </li>
+            <li>
+                <button></button>
+            </li>
+            <li>
+                <button></button>
+            </li>
+
+        </ul>
+    </div>
+
 </div>
-<script src="menu.js"></script>
+
 <!--<div align="right"> <input type="text"><button>sss</button></div>-->
 <!--<table width="1420" border="1">-->
 <!--    <tr>-->
@@ -40,5 +116,6 @@ search
 <!--        <td align="right"><input type="text"><button></button></td>-->
 <!--    </tr>-->
 <!--</table>-->
+<script src="menu.js"></script>
 </body>
 </html>
