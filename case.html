@@ -14,6 +14,7 @@
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@600&display=swap" rel="stylesheet">
     <link href="dangky.css" rel="stylesheet">
+    <script src="pro.js"></script>
 
 </head>
 <body>
@@ -71,22 +72,36 @@
     </form>
 </div>
 <div class="s" id="tao">
-    <form action="" method="post">
-        <h2>Đăng nhập tài khoản</h2>
-        <div class="input-box">
-            <h3>username</h3>
-            <input placeholder="Nhập username" type="text">
-        </div>
-        <div class="input-box">
-            <h3>password</h3>
-            <input placeholder="Nhập mật khẩu" type="password">
-        </div>
-        <div class="btn-box">
-            <button type="submit">
-                Đăng nhập
-            </button>
-        </div>
-    </form>
+    <h2>Thêm sản phẩm</h2>
+    <div class="input-box">
+        <h3>tên sản phẩm</h3>
+        <input id="np" placeholder="Nhập tên sản phẩm " type="text">
+    </div>
+    <div class="input-box">
+        <h3>giá</h3>
+        <input id="pp" placeholder="Nhập giá" type="number">
+    </div>
+    <div class="input-box">
+        <h3>mô tả</h3>
+        <textarea cols="44" id="mp" rows="12"></textarea>
+    </div>
+    <div class="input-box">
+        <h3>loại sản phẩm</h3>
+        <select id="lp">
+            <option value="loai.1">loại.1</option>
+            <option value="loai.2">loại.2</option>
+            <option value="loai.3">loại.3</option>
+        </select>
+    </div>
+    <div class="input-box">
+        <h3>ảnh</h3>
+        <input id="ap" placeholder="Nhập đường dẫn ảnh" type="text">
+    </div>
+    <div class="btn-box">
+        <button onclick="add()">
+            Thêm sản phẩm
+        </button>
+    </div>
 </div>
 <div id="menutop">
     <div id="logo"><img class="im" height="60" src="logo1.jpg" width="120"/></div>
@@ -106,32 +121,12 @@ search
                 <option value="za">theo tên Z-A</option>
             </select></p>
         </div>
-        <h2>gdbdbdgbg</h2>
-        <div class="img" id="image">
+        <h2>Product:</h2>
+        <div class="grid-container" id="img">
 
         </div>
-<!--        <div class="grid-container" id="img">-->
-<!--            <div class="grid-item"><img-->
-<!--                    alt=""-->
-<!--                    src="https://image.api.playstation.com/vulcan/img/rnd/202010/2715/ccTNECyr1IGEMh28b63gZzOv.png">-->
-<!--            </div>-->
-<!--            <div class="grid-item"><img-->
-<!--                    alt=""-->
-<!--                    src="https://image.api.playstation.com/vulcan/ap/rnd/202007/0206/LYdG6IjoOU7r1pYYIs13NoJA.png">-->
-<!--            </div>-->
-<!--            <div class="grid-item"><img-->
-<!--                    alt=""-->
-<!--                    src="https://image.api.playstation.com/vulcan/ap/rnd/202010/0205/QUS1HpQKsV8GQSs0WaZGWnuq.png">-->
-<!--            </div>-->
-<!--            <div class="grid-item"><img-->
-<!--                    alt=""-->
-<!--                    src="https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/HO8vkO9pfXhwbHi5WHECQJdN.png">-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="grid-container" id="image">-->
-
-<!--        </div>-->
     </div>
+
     <div class="s" id="left">
         <ul class="the">
             <h3>Thể loại:</h3>
@@ -149,14 +144,57 @@ search
     </div>
 
 </div>
+<script>
+    let pro = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202010/0205/QUS1HpQKsV8GQSs0WaZGWnuq.png')
+    let por2 = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/img/rnd/202010/2715/ccTNECyr1IGEMh28b63gZzOv.png')
+    let por3 = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/HO8vkO9pfXhwbHi5WHECQJdN.png')
+    let por4 = new Pro('ad', 50, '','', image = 'https://gmedia.playstation.com/is/image/SIEPDC/god-of-war-ragnarok-store-art-01-10sep21$en')
+    let por5 = new Pro('ad', 50, '','', image = 'https://upload.wikimedia.org/wikipedia/vi/b/b6/Ghost_of_Tsushima.jpg')
+    let por6 = new Pro('ad', 50, '', '',image = 'https://image.api.playstation.com/pr/bam-art/128/673/8b5c94cf-d7e4-41bd-8e94-c185a7820eb7.jpg?w=620&thumb=false')
+    let por7 = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202011/1900/sSZEg1DFAUrfWsA7ltLwpCdu.png?w=440&thumb=false')
+    let por8 = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/img/cfn/11307jgamRT2Qu2NDMKh50hCl1zQM740IxpZSaRBAus0FBJ4medj17Iakid0pgX1fGrEY8nwVZTeOpQbgSOEy1y74XY3iuGk.png?w=440&thumb=false')
+    let pros = [pro, por2, por3, por4, por5, por6, por7, por8]
 
-<!--<div align="right"> <input type="text"><button>sss</button></div>-->
-<!--<table width="1420" border="1">-->
-<!--    <tr>-->
-<!--        <td><button>MENU</button></td>-->
-<!--        <td align="right"><input type="text"><button></button></td>-->
-<!--    </tr>-->
-<!--</table>-->
+    dis()
+
+
+function remo(){
+        for(let i=pros;i<pros.length;i++){
+
+        }
+}
+    function Delete(index) {
+        for (let a = index; a < list.length; a++)
+            list[a] = list[a + 1];
+        list.pop()
+        display()
+    }
+
+</script>
 <script src="menu.js"></script>
 </body>
 </html>
+<!--let loaip = document.getElementById('lp').value-->
+
+
+<!--        <div class="grid-container" id="img">-->
+<!--            <div class="grid-item"><img-->
+<!--                    alt=""-->
+<!--                    src="https://image.api.playstation.com/vulcan/img/rnd/202010/2715/ccTNECyr1IGEMh28b63gZzOv.png">-->
+<!--            <div class="grid-item">-->
+<!--            <div class="grid-item"><img-->
+<!--                    alt=""-->
+<!--                    src="https://image.api.playstation.com/vulcan/ap/rnd/202007/0206/LYdG6IjoOU7r1pYYIs13NoJA.png">-->
+<!--            </div>-->
+<!--            <div class="grid-item"><img-->
+<!--                    alt=""-->
+<!--                    src="https://image.api.playstation.com/vulcan/ap/rnd/202010/0205/QUS1HpQKsV8GQSs0WaZGWnuq.png">-->
+<!--            </div>-->
+<!--            <div class="grid-item"><img-->
+<!--                    alt=""-->
+<!--                    src="https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/HO8vkO9pfXhwbHi5WHECQJdN.png">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="grid-container" id="image">-->
+
+<!--        </div>-->

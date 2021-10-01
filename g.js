@@ -7,7 +7,7 @@ $(function() {
     })
 })
 
-var count = 0
+let count = 0
 function addProduct() {
     // console.log('add product')
     //Thao tac du lieu
@@ -16,20 +16,17 @@ function addProduct() {
     description = $('#description').val()
     thumbnail = $('#thumbnail').val()
     price = $('#price').val()
-
-
     //Them noi dung text/html vao tag khong phai input
     $('#result').append(`
-  			<tr>
-  				<td>${++count}</td>
-  				<td><img src="${thumbnail}" style="width: 100px"></td>
-  				<td>${title}</td>
-  				<td>${description}</td>
-  				<td>${price}</td>
-  			</tr>`)
+  			<div>
+  				<div>${++count}</div>
+  				<div><img src="${thumbnail}" style="width: 100px"></div>
+  				<div>${title}</div>
+  				<div>${description}</div>
+  				<div>${price}</div>
+  			</div>`)
     // $('#result').prepend(count++)
     // $('#result').before(count++)
     // $('#result').after(count++)
-
     return false
 }

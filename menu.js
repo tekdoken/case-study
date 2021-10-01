@@ -41,10 +41,8 @@ function dk() {
             d = true
         }
 }
-
 window.onload = andn()
 let n = true
-
 function andn() {
     document.getElementById("fdn").style.display = "none";
 }
