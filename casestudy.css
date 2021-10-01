@@ -123,6 +123,16 @@ button {
     border: 2px dotted #cccccc;
     border-radius: 10px;
 }
+ #tao{
+     width: 100%;
+     max-width: 400px;
+     margin: 20px auto;
+     margin-left: 500px;
+     background-color: #ffffff;
+     padding: 15px;
+     border: 2px dotted #cccccc;
+     border-radius: 10px;
+ }
  .the{
      padding:7px 7px;
  }

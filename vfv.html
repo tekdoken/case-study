@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="tab">
+    <button class="c" onclick="openCity(event, 'London')">London</button>
+    <button class="c" onclick="openCity(event, 'Paris')">Paris</button>
+    <button class="c" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div id="London" class="a">
+    <h3>London</h3>
+    <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="a">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="a">
+    <div class="grid-item"><img src="https://image.api.playstation.com/vulcan/img/rnd/202010/2715/ccTNECyr1IGEMh28b63gZzOv.png" alt=""></div>
+    <div class="grid-item"><img src="https://image.api.playstation.com/vulcan/ap/rnd/202007/0206/LYdG6IjoOU7r1pYYIs13NoJA.png" alt=""></div>
+
+
+</div>
+
+<script>
+    function openCity(evt, cityName) {
+        var i, a, c;
+        a = document.getElementsByClassName("a");
+        for (i = 0; i < a.length; i++) {
+            a[i].style.display = "none";
+        }
+        c = document.getElementsByClassName("c");
+        for (i = 0; i < c.length; i++) {
+            c[i].className = c[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+</body>
+</html>
