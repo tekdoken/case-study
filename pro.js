@@ -14,29 +14,13 @@ class Pro {
                 <p class="price">Giá: ${this.pri}$</p>
                 <tr> <p>${this.de}</p>
                 <p>${this.loai}</p>
-             <button class="edit">Edit</button><button class="edit">Details</button><button class="edit">Remove</button>
+             <button class="edit">Edit</button><button class="edit">Details</button><button onclick="remo(${this.index})" class="edit">Remove</button>
             </div>`;
         return azx;
     }
 }
-class Manpro{
-    constructor() {
-        this.pros=[]
-    }
-    add() {
-        let namep = document.getElementById('np').value
-        let giap = document.getElementById('pp').value
-        let anhp = document.getElementById('ap').value
-        let npro = new Pro(namep, giap, '',loaip, anhp)
-        pros.unshift(npro);
-        dis()
-        taoan()
-        alert('thêm sản phẩm mới thành công')
-    }
-    dis() {
-        document.getElementById('img').innerHTML = ''
-        for (let i = 0; i < pros.length; i++) {
-            document.getElementById('img').innerHTML += pros[i].getPro()
-        }
-    }
-}
+// class Manpro{
+//     constructor() {
+//         this.pros=[]
+//     }
+//

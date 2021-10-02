@@ -145,29 +145,41 @@ search
 
 </div>
 <script>
-    let pro = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202010/0205/QUS1HpQKsV8GQSs0WaZGWnuq.png')
-    let por2 = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/img/rnd/202010/2715/ccTNECyr1IGEMh28b63gZzOv.png')
-    let por3 = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/HO8vkO9pfXhwbHi5WHECQJdN.png')
-    let por4 = new Pro('ad', 50, '','', image = 'https://gmedia.playstation.com/is/image/SIEPDC/god-of-war-ragnarok-store-art-01-10sep21$en')
-    let por5 = new Pro('ad', 50, '','', image = 'https://upload.wikimedia.org/wikipedia/vi/b/b6/Ghost_of_Tsushima.jpg')
-    let por6 = new Pro('ad', 50, '', '',image = 'https://image.api.playstation.com/pr/bam-art/128/673/8b5c94cf-d7e4-41bd-8e94-c185a7820eb7.jpg?w=620&thumb=false')
-    let por7 = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202011/1900/sSZEg1DFAUrfWsA7ltLwpCdu.png?w=440&thumb=false')
-    let por8 = new Pro('ad', 50, '','', image = 'https://image.api.playstation.com/vulcan/img/cfn/11307jgamRT2Qu2NDMKh50hCl1zQM740IxpZSaRBAus0FBJ4medj17Iakid0pgX1fGrEY8nwVZTeOpQbgSOEy1y74XY3iuGk.png?w=440&thumb=false')
+    let pro = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202010/0205/QUS1HpQKsV8GQSs0WaZGWnuq.png')
+    let por2 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/img/rnd/202010/2715/ccTNECyr1IGEMh28b63gZzOv.png')
+    let por3 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/HO8vkO9pfXhwbHi5WHECQJdN.png')
+    let por4 = new Pro('asd', 50, '', '', image = 'https://gmedia.playstation.com/is/image/SIEPDC/god-of-war-ragnarok-store-art-01-10sep21$en')
+    let por5 = new Pro('ad', 50, '', '', image = 'https://upload.wikimedia.org/wikipedia/vi/b/b6/Ghost_of_Tsushima.jpg')
+    let por6 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/pr/bam-art/128/673/8b5c94cf-d7e4-41bd-8e94-c185a7820eb7.jpg?w=620&thumb=false')
+    let por7 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202011/1900/sSZEg1DFAUrfWsA7ltLwpCdu.png?w=440&thumb=false')
+    let por8 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/img/cfn/11307jgamRT2Qu2NDMKh50hCl1zQM740IxpZSaRBAus0FBJ4medj17Iakid0pgX1fGrEY8nwVZTeOpQbgSOEy1y74XY3iuGk.png?w=440&thumb=false')
     let pros = [pro, por2, por3, por4, por5, por6, por7, por8]
 
     dis()
 
+    function add() {
+        let namep = document.getElementById('np').value
+        let giap = document.getElementById('pp').value
+        let anhp = document.getElementById('ap').value
+        let npro = new Pro(namep, giap, '', '', anhp)
+        pros.unshift(npro);
+        dis()
+        taoan();
+        t = true
+        // alert('thêm sản phẩm mới thành công')
+    }
 
-function remo(){
-        for(let i=pros;i<pros.length;i++){
-
+    function dis() {
+        document.getElementById('img').innerHTML = ''
+        for (let i = 0; i < pros.length; i++) {
+            pros[i].index=i
+            document.getElementById('img').innerHTML += pros[i].getPro()
         }
-}
-    function Delete(index) {
-        for (let a = index; a < list.length; a++)
-            list[a] = list[a + 1];
-        list.pop()
-        display()
+    }
+    function remo(index) {
+    pros.splice(index,1)
+        dis()
+        // alert('xóa sản phẩm thành công')
     }
 
 </script>
@@ -175,26 +187,4 @@ function remo(){
 </body>
 </html>
 <!--let loaip = document.getElementById('lp').value-->
-
-
-<!--        <div class="grid-container" id="img">-->
-<!--            <div class="grid-item"><img-->
-<!--                    alt=""-->
-<!--                    src="https://image.api.playstation.com/vulcan/img/rnd/202010/2715/ccTNECyr1IGEMh28b63gZzOv.png">-->
-<!--            <div class="grid-item">-->
-<!--            <div class="grid-item"><img-->
-<!--                    alt=""-->
-<!--                    src="https://image.api.playstation.com/vulcan/ap/rnd/202007/0206/LYdG6IjoOU7r1pYYIs13NoJA.png">-->
-<!--            </div>-->
-<!--            <div class="grid-item"><img-->
-<!--                    alt=""-->
-<!--                    src="https://image.api.playstation.com/vulcan/ap/rnd/202010/0205/QUS1HpQKsV8GQSs0WaZGWnuq.png">-->
-<!--            </div>-->
-<!--            <div class="grid-item"><img-->
-<!--                    alt=""-->
-<!--                    src="https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/HO8vkO9pfXhwbHi5WHECQJdN.png">-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="grid-container" id="image">-->
-
-<!--        </div>-->
+<!--let mop = document.getElementById('mp').value-->

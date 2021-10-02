@@ -61,7 +61,7 @@ function dn() {
         }
 }
 window.onload = taoan()
-let t = true
+let t =true
 
 function taoan() {
     document.getElementById("tao").style.display = "none";
