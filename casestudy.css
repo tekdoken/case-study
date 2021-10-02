@@ -133,6 +133,15 @@ button {
      padding: 15px;
      border: 2px dotted #cccccc;
      border-radius: 10px;
+ } #sua{
+     width: 100%;
+     max-width: 400px;
+     margin: 20px auto;
+     margin-left: 500px;
+     background-color: #ffffff;
+     padding: 15px;
+     border: 2px dotted #cccccc;
+     border-radius: 10px;
  }
  .the{
      padding:7px 7px;
@@ -169,4 +178,10 @@ button {
 .grid-item button {
     margin-left: 5px;
     margin-right: 5px;
+}
+#toast-container {
+    min-width: 10%;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%) translateY(50%);
 }

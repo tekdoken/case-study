@@ -103,6 +103,38 @@
         </button>
     </div>
 </div>
+<div class="s" id="sua">
+    <h2>Sửa sản phẩm</h2>
+    <div class="input-box">
+        <h3>tên sản phẩm</h3>
+        <input id="nps" placeholder="Nhập tên sản phẩm " type="text">
+    </div>
+    <div class="input-box">
+        <h3>giá</h3>
+        <input id="pps" placeholder="Nhập giá" type="number">
+    </div>
+    <div class="input-box">
+        <h3>mô tả</h3>
+        <textarea cols="44" id="mps" rows="12"></textarea>
+    </div>
+    <div class="input-box">
+        <h3>loại sản phẩm</h3>
+        <select id="lps">
+            <option value="loai.1">loại.1</option>
+            <option value="loai.2">loại.2</option>
+            <option value="loai.3">loại.3</option>
+        </select>
+    </div>
+    <div class="input-box">
+        <h3>ảnh</h3>
+        <input id="aps" placeholder="Nhập đường dẫn ảnh" type="text">
+    </div>
+    <div class="btn-box">
+        <button onclick="edit()">
+            xác nhận
+        </button>
+    </div>
+</div>
 <div id="menutop">
     <div id="logo"><img class="im" height="60" src="logo1.jpg" width="120"/></div>
     <hr>
@@ -169,16 +201,33 @@ search
         // alert('thêm sản phẩm mới thành công')
     }
 
+    function edit(index) {
+        let namep = document.getElementById('np').value
+        let giap = document.getElementById('pp').value
+        let anhp = document.getElementById('ap').value
+        let loaip = document.getElementById('lp').value
+        let mop = document.getElementById('mp').value
+        let npro = new Pro(namep, giap, loaip, mop, anhp)
+        pros[index] = npro;
+        dis();
+        // edan();
+        t = true
+        // alert('thêm sản phẩm mới thành công')
+    }
+
     function dis() {
         document.getElementById('img').innerHTML = ''
         for (let i = 0; i < pros.length; i++) {
-            pros[i].index=i
+            pros[i].index = i
             document.getElementById('img').innerHTML += pros[i].getPro()
         }
     }
+
     function remo(index) {
-    pros.splice(index,1)
-        dis()
+        if (confirm("Bạn muốn xóa sản phẩm này") === true) {
+            pros.splice(index, 1)
+            dis()
+        }
         // alert('xóa sản phẩm thành công')
     }
 
@@ -186,5 +235,4 @@ search
 <script src="menu.js"></script>
 </body>
 </html>
-<!--let loaip = document.getElementById('lp').value-->
-<!--let mop = document.getElementById('mp').value-->
+

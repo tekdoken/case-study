@@ -14,13 +14,8 @@ class Pro {
                 <p class="price">Giá: ${this.pri}$</p>
                 <tr> <p>${this.de}</p>
                 <p>${this.loai}</p>
-             <button class="edit">Edit</button><button class="edit">Details</button><button onclick="remo(${this.index})" class="edit">Remove</button>
+             <button onclick="edit(${this.index})" class="edit">Edit</button><button class="edit">Details</button><button onclick="remo(${this.index})" class="edit">Remove</button>
             </div>`;
         return azx;
     }
 }
-// class Manpro{
-//     constructor() {
-//         this.pros=[]
-//     }
-//

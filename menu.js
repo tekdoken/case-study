@@ -79,6 +79,25 @@ function tao() {
             taoan();
             t = true
         }
+}window.onload = edan()
+let y=true
+
+function edan() {
+    document.getElementById("sua").style.display = "none";
+}
+
+function edhien() {
+    document.getElementById("sua").style.display = "inline-block";
+    y = false
+}
+
+function ed() {
+        if (y == true) {
+            edhien()
+        } else {
+            edan();
+            y = true
+        }
 }
 
 // let list = ['Ip13', 'S10', 'X18', 'Ip12', 'M20']
