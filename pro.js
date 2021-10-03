@@ -9,7 +9,7 @@ class Pro {
 
     getPro() {
         let azx = `<div class="grid-item">
-                <img src="${this.image}" alt="">
+                <img src="${this.image}" alt="" style="width: 300px;height: 320px;border-radius: 20px">
                 <h2>${this.name}</h2>
                 <p>Giá: ${this.pri}$</p>
                <p>${this.de}</p>
