@@ -11,11 +11,12 @@ class Pro {
         let azx = `<div class="grid-item">
                 <img src="${this.image}" alt="">
                 <h2>${this.name}</h2>
-                <p class="price">Giá: ${this.pri}$</p>
-                <tr> <p>${this.de}</p>
+                <p>Giá: ${this.pri}$</p>
+               <p>${this.de}</p>
                 <p>${this.loai}</p>
-             <button onclick="edit(${this.index})" class="edit">Edit</button><button class="edit">Details</button><button onclick="remo(${this.index})" class="edit">Remove</button>
+             <button onclick="edit(${this.index})" >Edit</button><button  onclick="de(${this.index})">Details</button><button onclick="remo(${this.index})" >Remove</button>
             </div>`;
+
         return azx;
     }
 }

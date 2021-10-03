@@ -50,6 +50,9 @@
             <button type="submit">
                 Đăng ký
             </button>
+            </button><button onclick="hide()">
+            hủy
+        </button>
         </div>
     </form>
 </div>
@@ -68,6 +71,9 @@
             <button type="submit">
                 Đăng nhập
             </button>
+            </button><button onclick="hide()">
+            hủy
+        </button>
         </div>
     </form>
 </div>
@@ -101,9 +107,13 @@
         <button onclick="add()">
             Thêm sản phẩm
         </button>
+        </button>
+        <button onclick="hide('tao')">
+            hủy
+        </button>
     </div>
 </div>
-<div class="s" id="sua">
+<div class="s" id="sua" style="display:none">
     <h2>Sửa sản phẩm</h2>
     <div class="input-box">
         <h3>tên sản phẩm</h3>
@@ -130,8 +140,11 @@
         <input id="aps" placeholder="Nhập đường dẫn ảnh" type="text">
     </div>
     <div class="btn-box">
-        <button onclick="edit()">
+        <button onclick="save(l)">
             xác nhận
+        </button>
+        <button onclick="hide('sua')">
+            hủy
         </button>
     </div>
 </div>
@@ -176,16 +189,17 @@ search
     </div>
 
 </div>
+<!--<div class="s" id="chi"></div>-->
 <script>
-    let pro = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202010/0205/QUS1HpQKsV8GQSs0WaZGWnuq.png')
+    let pro1 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202010/0205/QUS1HpQKsV8GQSs0WaZGWnuq.png')
     let por2 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/img/rnd/202010/2715/ccTNECyr1IGEMh28b63gZzOv.png')
     let por3 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/HO8vkO9pfXhwbHi5WHECQJdN.png')
-    let por4 = new Pro('asd', 50, '', '', image = 'https://gmedia.playstation.com/is/image/SIEPDC/god-of-war-ragnarok-store-art-01-10sep21$en')
-    let por5 = new Pro('ad', 50, '', '', image = 'https://upload.wikimedia.org/wikipedia/vi/b/b6/Ghost_of_Tsushima.jpg')
+    let por4 = new Pro('sd', 50, '', '', image = 'https://gmedia.playstation.com/is/image/SIEPDC/god-of-war-ragnarok-store-art-01-10sep21$en')
+    let por5 = new Pro('d', 50, '', '', image = 'https://upload.wikimedia.org/wikipedia/vi/b/b6/Ghost_of_Tsushima.jpg')
     let por6 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/pr/bam-art/128/673/8b5c94cf-d7e4-41bd-8e94-c185a7820eb7.jpg?w=620&thumb=false')
     let por7 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202011/1900/sSZEg1DFAUrfWsA7ltLwpCdu.png?w=440&thumb=false')
     let por8 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/img/cfn/11307jgamRT2Qu2NDMKh50hCl1zQM740IxpZSaRBAus0FBJ4medj17Iakid0pgX1fGrEY8nwVZTeOpQbgSOEy1y74XY3iuGk.png?w=440&thumb=false')
-    let pros = [pro, por2, por3, por4, por5, por6, por7, por8]
+    let pros = [pro1, por2, por3, por4, por5, por6, por7, por8]
 
     dis()
 
@@ -201,18 +215,43 @@ search
         // alert('thêm sản phẩm mới thành công')
     }
 
+    let l = 0
+
     function edit(index) {
-        let namep = document.getElementById('np').value
-        let giap = document.getElementById('pp').value
-        let anhp = document.getElementById('ap').value
-        let loaip = document.getElementById('lp').value
-        let mop = document.getElementById('mp').value
-        let npro = new Pro(namep, giap, loaip, mop, anhp)
-        pros[index] = npro;
-        dis();
-        // edan();
-        t = true
-        // alert('thêm sản phẩm mới thành công')
+        document.getElementById('sua').style.display = 'block';
+        document.getElementById('nps').value = pros[index].name
+        document.getElementById('pps').value = pros[index].pri
+        document.getElementById('aps').value = pros[index].image
+        l = index
+        return l
+    }
+
+    function hide(h) {
+        document.getElementById(h).style.display = 'none';
+    }
+
+    // function de(index) {
+    //     document.getElementById('chi').style.display = 'block';
+    //
+    //     document.getElementById('chi').innerHTML = ''
+    //     for (let i = 0; i < pros.length; i++) {
+    //        if(pros[i]!=pros[index]) {
+    //            pros[i] = ''
+    //        }
+    // document.getElementById('chi').innerHTML += pros[index].getPro()
+    // document.getElementById('chi').innerHTML += pros[i].getPro()
+    // }}
+    function save(index) {
+        let namep = document.getElementById('nps').value
+        let giap = document.getElementById('pps').value
+        let anhp = document.getElementById('aps').value
+        // let mop = document.getElementById('mops').value
+        // let loaip = document.getElementById('lps').value
+        let npro = new Pro(namep, giap, '', '', anhp)
+        pros.splice(index, 1, npro)
+        dis()
+        document.getElementById('sua').style.display = 'none';
+// alert('thêm sản phẩm mới thành công')
     }
 
     function dis() {
@@ -220,19 +259,23 @@ search
         for (let i = 0; i < pros.length; i++) {
             pros[i].index = i
             document.getElementById('img').innerHTML += pros[i].getPro()
+
         }
     }
 
+
     function remo(index) {
         if (confirm("Bạn muốn xóa sản phẩm này") === true) {
-            pros.splice(index, 1)
+            pros.splice(index, 1, pros[index])
             dis()
+            // alert('xóa sản phẩm thành công')
         }
-        // alert('xóa sản phẩm thành công')
+
     }
 
 </script>
 <script src="menu.js"></script>
+
 </body>
 </html>
 
