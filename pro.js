@@ -20,3 +20,24 @@ class Pro {
         return azx;
     }
 }
+function saveda(dataArr){
+    localStorage.setItem('data',JSON.stringify(dataArr))
+}
+function load(dataArr){
+    if(localStorage.hasOwnProperty('data'))
+    {
+        let data = localStorage.getItem('data')
+        let datacon= JSON.parse(data)
+        return con(datacon)
+    }else{
+        return [];
+    }
+}
+function con(dataArr){
+    let arrObj =[];
+    for (let i=0;i<dataArr.length;i++){
+        let pro=new Pro(dataArr[i].name,dataArr[i].pri,dataArr[i].de,dataArr[i].loai,dataArr[i].image)
+  arrObj.push(pro)
+    }
+    return arrObj;
+}

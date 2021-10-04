@@ -161,7 +161,7 @@ button {
     margin-left: 50px;
 }
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(255, 255, 255);
     border: 1px solid rgba(82, 92, 234, 0.82);
     padding: 2px;
     font-size: 30px;
@@ -192,15 +192,17 @@ button {
     transform: translateX(50%) translateY(50%);
 }
 #chi{
-    background-color: #0029f7;
+    background-color: rgba(255, 255, 255, 0);
     display: grid;
     grid-template-columns: auto auto auto auto;
     padding: 0px;
     align-items: center;
-    width: 350px;
-    position: fixed;
-    margin-left: 40%;
-margin-bottom: 220px;
+    width: 300px;
+    /*height: 40px;*/
+    /*position: fixed;*/
+    /*margin-left: 40%;*/
+    /*margin-top: -190px;*/
+
 
 }
 /*#chi.img{*/
@@ -208,3 +210,19 @@ margin-bottom: 220px;
 /*    height: 320px;*/
 /*    border-radius: 20px;*/
 /*}*/
+#c{
+    background-color: rgba(255, 255, 255, 0);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 1px;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    position: fixed;
+    margin-left: 40%;
+    margin-top: -200px;
+}
+#c #b{
+    background-color: #2bff00;
+    margin-left: 330px;
+}
