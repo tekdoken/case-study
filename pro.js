@@ -4,7 +4,8 @@ class Pro {
         this.pri = pri;
         this.de = de;
         this.loai = loai
-        this.image = image
+        this.image = image;
+
     }
 
     getPro() {
@@ -14,7 +15,7 @@ class Pro {
                 <p>Giá: ${this.pri}$</p>
                <p>${this.de}</p>
                 <p>${this.loai}</p>
-             <button onclick="edit(${this.index})" >Edit</button><button  onclick="de(${this.index})">Details</button><button onclick="remo(${this.index})" >Remove</button>
+             <button onclick="edit(${this.index})" >Edit</button><button  onclick="details(${this.index})">Details</button><button onclick="remo(${this.index})" >Remove</button>
             </div>`;
 
         return azx;

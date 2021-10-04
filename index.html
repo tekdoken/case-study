@@ -156,8 +156,8 @@
     <hr>
     <button class="btn" onclick="menu()"><i class="fa fa-bars"></i></button>
     <button class="s" onclick="show('tao')">Tạo mới sản phẩm</button>
-    <input class='in' placeholder='Tìm kiếm' type="text">
-    <button class="ss"><span class="material-icons-outlined">
+    <input  class='in' id="tt" placeholder='Tìm kiếm' type="text">
+    <button class="ss" onclick="t(pros)"><span class="material-icons-outlined">
 search
 </span></button>
 </div>
@@ -170,6 +170,7 @@ search
             </select></p>
         </div>
         <h2>Product:</h2>
+<!--        <button class='s' id="r" onclick="dis(pros)">reset</button>-->
         <div class="grid-container" id="img">
 
         </div>
@@ -192,10 +193,11 @@ search
     </div>
 
 </div>
-<div id="c" class="s" style="display:none">
-    <button id="b" class='s' onclick="hide('c')">đóng</button>
-<!--    <div class="s" id="chi">-->
-<!--</div>-->
+<div class="s" id="c" style="display:none">
+    <button class='s' id="b" onclick="hide('c')">đóng</button>
+
+        <div class="s" id="chi">
+    </div>
 </div>
 
 
@@ -209,9 +211,9 @@ search
     let por7 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/ap/rnd/202011/1900/sSZEg1DFAUrfWsA7ltLwpCdu.png?w=440&thumb=false')
     let por8 = new Pro('ad', 50, '', '', image = 'https://image.api.playstation.com/vulcan/img/cfn/11307jgamRT2Qu2NDMKh50hCl1zQM740IxpZSaRBAus0FBJ4medj17Iakid0pgX1fGrEY8nwVZTeOpQbgSOEy1y74XY3iuGk.png?w=440&thumb=false')
     let pros = [pro1, por2, por3, por4, por5, por6, por7, por8]
-    pros=load()
+    pros = load()
 
-    dis()
+    dis(pros)
 
     function add() {
         let namep = document.getElementById('np').value
@@ -219,8 +221,9 @@ search
         let anhp = document.getElementById('ap').value
         let npro = new Pro(namep, giap, '', '', anhp)
         pros.unshift(npro);
-        dis()
+        dis(pros)
         hide('tao')
+        saveda(pros)
         // alert('thêm sản phẩm mới thành công')
     }
 
@@ -243,25 +246,42 @@ search
         document.getElementById(h).style.display = 'block';
     }
 
-    // function de(index) {
-    //     document.getElementById('c').style.display = 'block';
-    //
-    //     let namep = document.getElementById('np').value
-    //     let giap = document.getElementById('pp').value
-    //     let anhp = document.getElementById('ap').value
-    //     let mop = document.getElementById('mp').value
-    //     let loaip = document.getElementById('lp').value
-    //     let npro = new Pro(namep, giap, mop, loaip, anhp)
-    //
-    //     document.getElementById('chi').innerHTML = ''
-    //     for (let i = 0; i < pros.length; i++) {
-    //         if (pros[i] != pros[index]) {
-    //             pros[i] = ''
-    //         }
-    //         document.getElementById('chi').innerHTML += pros[index].getPro()
-    //         document.getElementById('chi').innerHTML += pros[i].getPro()
-    //     }
-    // }
+    function details(index) {
+        document.getElementById('c').style.display = 'block';
+
+        let namep = document.getElementById('np').value
+        let giap = document.getElementById('pp').value
+        let anhp = document.getElementById('ap').value
+        let mop = document.getElementById('mp').value
+        let loaip = document.getElementById('lp').value
+        let npro = new Pro(namep, giap, mop, loaip, anhp)
+
+        document.getElementById('chi').innerHTML = ''
+        for (let i =0 ; i < pros.length; i++) {
+            if (pros[i] != pros[index]) {
+                pros[i] = ''
+            }
+            document.getElementById('chi').innerHTML += pros[index].getPro()
+            document.getElementById('chi').innerHTML += pros[i].getPro()
+        }
+    }    function det(index) {
+
+        let namep = document.getElementById('np').value
+        let giap = document.getElementById('pp').value
+        let anhp = document.getElementById('ap').value
+        let mop = document.getElementById('mp').value
+        let loaip = document.getElementById('lp').value
+        let npro = new Pro(namep, giap, mop, loaip, anhp)
+
+        document.getElementById('img').innerHTML = ''
+        for (let i = 0; i < pros.length; i++) {
+            if (pros[i] != pros[index]) {
+                pros[i] = ''
+            }
+            document.getElementById('img').innerHTML += pros[index].getPro()
+            document.getElementById('img').innerHTML += pros[i].getPro()
+        }
+    }
 
     function save(index) {
         let namep = document.getElementById('nps').value
@@ -271,31 +291,40 @@ search
         // let loaip = document.getElementById('lps').value
         let npro = new Pro(namep, giap, '', '', anhp)
         pros.splice(index, 1, npro)
-        dis()
+        dis(pros)
         document.getElementById('sua').style.display = 'none';
 // alert('thêm sản phẩm mới thành công')
     }
 
-    function dis() {
+    function dis(p) {
         document.getElementById('img').innerHTML = ''
-        for (let i = 0; i < pros.length; i++) {
-            pros[i].index = i
-            document.getElementById('img').innerHTML += pros[i].getPro()
-            saveda(pros)
-
+        for (let i = 0; i < p.length; i++) {
+            p[i].index = i
+            document.getElementById('img').innerHTML += p[i].getPro()
         }
     }
 
     function remo(index) {
         if (confirm("Bạn muốn xóa sản phẩm này") === true) {
             pros.splice(index, 1)
-            dis()
+            dis(pros)
+            saveda(pros)
             // alert('xóa sản phẩm thành công')
         }
 
     }
 
+    function t(p) {
+        let tim = document.getElementById('tt').value
+        for (let i = 0; i < p.length; i++) {
+            if (tim == p[i].name) {
+               det(i)
+            } else {
+                // alert('không tìm thấy')
+            }
+        }
 
+    }
 </script>
 
 <script src="menu.js"></script>
