@@ -246,25 +246,26 @@ search
         document.getElementById(h).style.display = 'block';
     }
 
-    function details(index) {
-        document.getElementById('c').style.display = 'block';
-
-        let namep = document.getElementById('np').value
-        let giap = document.getElementById('pp').value
-        let anhp = document.getElementById('ap').value
-        let mop = document.getElementById('mp').value
-        let loaip = document.getElementById('lp').value
-        let npro = new Pro(namep, giap, mop, loaip, anhp)
-
-        document.getElementById('chi').innerHTML = ''
-        for (let i =0 ; i < pros.length; i++) {
-            if (pros[i] != pros[index]) {
-                pros[i] = ''
-            }
-            document.getElementById('chi').innerHTML += pros[index].getPro()
-            document.getElementById('chi').innerHTML += pros[i].getPro()
-        }
-    }    function det(index) {
+    // function details(index) {
+    //     document.getElementById('c').style.display = 'block';
+    //
+    //     let namep = document.getElementById('np').value
+    //     let giap = document.getElementById('pp').value
+    //     let anhp = document.getElementById('ap').value
+    //     let mop = document.getElementById('mp').value
+    //     let loaip = document.getElementById('lp').value
+    //     let npro = new Pro(namep, giap, mop, loaip, anhp)
+    //
+    //     document.getElementById('chi').innerHTML = ''
+    //     for (let i =0 ; i < pros.length; i++) {
+    //         if (pros[i] != pros[index]) {
+    //             pros[i] = ''
+    //         }
+    //         document.getElementById('chi').innerHTML += pros[index].getPro()
+    //         document.getElementById('chi').innerHTML += pros[i].getPro()
+    //     }
+    // }
+    function det(index) {
 
         let namep = document.getElementById('np').value
         let giap = document.getElementById('pp').value
