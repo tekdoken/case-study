@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f34bff57-2be8-4e8b-9908-35c9da0343b7" name="Changes" comment="" />
+    <list default="true" id="f34bff57-2be8-4e8b-9908-35c9da0343b7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/167299.png" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image/167299.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case.gif" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image/case.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case.html" beforeDir="false" afterPath="$PROJECT_DIR$/case.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy.css" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/css/casestudy.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chitiet.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dangky.css" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/css/dangky.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dddd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoz.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/g.js" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/js/g.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logo1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image/logo1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/js/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image/nen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro.js" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/js/pro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quanlysan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screen-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image/screen-1.jpg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -31,10 +50,23 @@
       <option name="presentableId" value="Default" />
       <updated>1632905449351</updated>
       <workItem from="1632905450598" duration="7000" />
+      <workItem from="1644456548941" duration="720000" />
+      <workItem from="1645430077061" duration="364000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
