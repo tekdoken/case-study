@@ -4,19 +4,41 @@ class Pro {
         this.pri = pri;
         this.de = de;
         this.loai = loai
-        this.image = image
+        this.image = image;
+
     }
 
     getPro() {
         let azx = `<div class="grid-item">
-                <img src="${this.image}" alt="">
+                <img src="${this.image}" alt="" style="width: 300px;height: 320px;border-radius: 20px">
                 <h2>${this.name}</h2>
                 <p>Giá: ${this.pri}$</p>
                <p>${this.de}</p>
                 <p>${this.loai}</p>
-             <button onclick="edit(${this.index})" >Edit</button><button  onclick="de(${this.index})">Details</button><button onclick="remo(${this.index})" >Remove</button>
+             <button onclick="edit(${this.index})" >Edit</button><button  onclick="details(${this.index})">Details</button><button onclick="remo(${this.index})" >Remove</button>
             </div>`;
 
         return azx;
     }
+}
+function saveda(dataArr){
+    localStorage.setItem('data',JSON.stringify(dataArr))
+}
+function load(dataArr){
+    if(localStorage.hasOwnProperty('data'))
+    {
+        let data = localStorage.getItem('data')
+        let datacon= JSON.parse(data)
+        return con(datacon)
+    }else{
+        return [];
+    }
+}
+function con(dataArr){
+    let arrObj =[];
+    for (let i=0;i<dataArr.length;i++){
+        let pro=new Pro(dataArr[i].name,dataArr[i].pri,dataArr[i].de,dataArr[i].loai,dataArr[i].image)
+  arrObj.push(pro)
+    }
+    return arrObj;
 }
